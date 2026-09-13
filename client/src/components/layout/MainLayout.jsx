@@ -10,7 +10,7 @@ const MainLayout = () => {
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-200">
       <ScrollProgress />
       <Navbar />
-      <main className="flex-grow pt-20 sm:pt-24 w-full overflow-x-hidden">
+      <main className="flex-grow pt-24 sm:pt-28 lg:pt-30 w-full overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />
