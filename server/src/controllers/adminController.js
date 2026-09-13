@@ -1868,16 +1868,18 @@ export const getReports = async (req, res, next) => {
       pendingCount,
       resolvedCount,
       underReviewCount,
+      rejectedCount,
       totalReports,
-      criticalReviewCount,
-      highReviewCount,
+      criticalCasesCount,
+      highPriorityCount,
     ] = await Promise.all([
       Report.countDocuments({ status: 'pending' }),
       Report.countDocuments({ status: 'resolved' }),
       Report.countDocuments({ status: 'under_review' }),
+      Report.countDocuments({ status: 'rejected' }),
       Report.countDocuments({}),
-      Report.countDocuments({ status: 'under_review', priority: 'critical' }),
-      Report.countDocuments({ status: 'under_review', priority: 'high' }),
+      Report.countDocuments({ priority: 'critical' }),
+      Report.countDocuments({ priority: 'high' }),
     ]);
 
     res.status(200).json(new ApiResponse(200, {
@@ -1892,8 +1894,9 @@ export const getReports = async (req, res, next) => {
         pending: pendingCount,
         underReview: underReviewCount,
         resolved: resolvedCount,
-        criticalCases: criticalReviewCount,
-        highPriority: highReviewCount,
+        rejected: rejectedCount,
+        criticalCases: criticalCasesCount,
+        highPriority: highPriorityCount,
         avgReviewTime: '1.8 days',
       },
     }, 'Reports fetched successfully'));

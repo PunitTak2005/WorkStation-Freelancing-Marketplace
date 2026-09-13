@@ -382,7 +382,7 @@ export default function AdminReportsPage() {
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <span className="text-3xl font-black text-slate-900 dark:text-white">
-              {stats?.underReview ?? 6}
+              {stats?.underReview ?? 5}
             </span>
             <span className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">
               Active Queue
@@ -417,7 +417,7 @@ export default function AdminReportsPage() {
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <span className="text-3xl font-black text-rose-600 dark:text-rose-400">
-              {stats?.criticalCases ?? 1}
+              {stats?.criticalCases ?? 4}
             </span>
             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
@@ -453,7 +453,7 @@ export default function AdminReportsPage() {
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <span className="text-3xl font-black text-slate-900 dark:text-white">
-              {stats?.highPriority ?? 3}
+              {stats?.highPriority ?? 6}
             </span>
             <span className="text-xs text-orange-600 dark:text-orange-400 font-medium">
               Escalated
@@ -502,10 +502,11 @@ export default function AdminReportsPage() {
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
           <div className="flex flex-wrap items-center gap-2">
             {[
-              { id: '', label: 'All Reports', count: stats?.totalReports ?? 28 },
-              { id: 'under_review', label: 'Under Review', count: stats?.underReview ?? 6, emoji: '🟡' },
-              { id: 'pending', label: 'Pending', count: stats?.pending ?? 8, emoji: '🔴' },
-              { id: 'resolved', label: 'Resolved', count: stats?.resolved ?? 14, emoji: '🟢' },
+              { id: '', label: 'All Reports', count: stats?.totalReports ?? 20 },
+              { id: 'under_review', label: 'Under Review', count: stats?.underReview ?? 5, emoji: '🟡' },
+              { id: 'pending', label: 'Pending', count: stats?.pending ?? 6, emoji: '🔴' },
+              { id: 'resolved', label: 'Resolved', count: stats?.resolved ?? 6, emoji: '🟢' },
+              { id: 'rejected', label: 'Rejected', count: stats?.rejected ?? 3, emoji: '⚪' },
             ].map((tab) => {
               const active = statusFilter === tab.id;
               return (
@@ -694,6 +695,14 @@ export default function AdminReportsPage() {
                           <span className={cn('w-1.5 h-1.5 rounded-full', prio.dot)} />
                           {prio.label}
                         </span>
+
+                        {/* Category Chip */}
+                        {report.category && report.category !== 'other' && (
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                            <Tag size={10} className="text-slate-400" />
+                            <span className="truncate max-w-[120px]">{report.category}</span>
+                          </span>
+                        )}
 
                         {/* Project Chip */}
                         <span className={cn('inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold border', projectMeta.badgeClass)}>
@@ -983,6 +992,11 @@ export default function AdminReportsPage() {
                   <span className={cn('px-2.5 py-0.5 rounded-full text-xs font-semibold border', STATUS_META[selectedReport.status]?.pill)}>
                     {STATUS_META[selectedReport.status]?.label}
                   </span>
+                  {selectedReport.category && (
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                      {selectedReport.category}
+                    </span>
+                  )}
                 </div>
                 <h2 className="text-xl md:text-2xl font-black text-slate-900 dark:text-white">
                   {selectedReport.title}
@@ -1046,6 +1060,30 @@ export default function AdminReportsPage() {
                 <p className="text-sm text-emerald-900 dark:text-emerald-200">
                   {selectedReport.resolutionNotes || selectedReport.notes}
                 </p>
+              </div>
+            )}
+
+            {/* Attachments if available */}
+            {selectedReport.attachments && selectedReport.attachments.length > 0 && (
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-2">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                  <FileText size={13} />
+                  Attached Evidence & Audit Logs ({selectedReport.attachments.length})
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {selectedReport.attachments.map((att, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80 bg-white dark:bg-slate-800 text-xs"
+                    >
+                      <div className="flex items-center gap-2 truncate">
+                        <FileText size={14} className="text-indigo-500 flex-shrink-0" />
+                        <span className="font-semibold text-slate-800 dark:text-slate-200 truncate">{att.fileName}</span>
+                      </div>
+                      <span className="text-[10px] uppercase font-bold text-slate-400 ml-2">{att.fileType}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 

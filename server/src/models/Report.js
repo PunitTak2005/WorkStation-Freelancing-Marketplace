@@ -15,8 +15,8 @@ const reportSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ['progress', 'bug', 'design', 'payment', 'deployment', 'sprint', 'feature', 'audit', 'other'],
       default: 'other',
+      trim: true,
     },
     project: {
       type: String,
