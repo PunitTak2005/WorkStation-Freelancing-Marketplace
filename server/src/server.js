@@ -88,20 +88,31 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+// Root route for Render and browser verification
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'WorkStation Backend API is running.',
+    status: 'healthy',
+    version: '1.0.0',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Comprehensive Health check for Render / Monitoring
 app.get('/api/health', (req, res) => {
   const dbState = ['disconnected', 'connected', 'connecting', 'disconnecting'][mongoose.connection.readyState] || 'unknown';
-  res.json({
+  res.status(200).json({
     success: true,
     status: 'healthy',
     message: 'Workstation API is running',
     version: '1.0.0',
+    uptime: Math.floor(process.uptime()),
     environment: process.env.NODE_ENV || 'development',
     database: {
       status: dbState,
       connected: mongoose.connection.readyState === 1
     },
-    uptime: Math.floor(process.uptime()),
     timestamp: new Date().toISOString()
   });
 });
