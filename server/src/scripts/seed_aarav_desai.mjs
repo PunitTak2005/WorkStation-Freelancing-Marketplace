@@ -233,7 +233,8 @@ async function seedAaravDesai() {
         experienceLevel: 'expert',
         client: clientUser._id,
         status: 'in_progress',
-        skills: ['React', 'Node.js', 'MongoDB', 'REST APIs', 'Tailwind CSS']
+        skills: ['React', 'Node.js', 'MongoDB', 'REST APIs', 'Tailwind CSS'],
+        skillsRequired: ['React', 'Node.js', 'MongoDB', 'REST APIs', 'Tailwind CSS']
       });
       console.log('✓ Created CRM Dashboard Job:', crmJob._id);
     } else {
@@ -308,25 +309,16 @@ async function seedAaravDesai() {
     }
 
     // 7. Seed Reviews for Aarav to guarantee 4.9 average rating
-    const existingReviewsCount = await Review.countDocuments({ reviewee: aarav._id });
-    if (existingReviewsCount === 0) {
-      await Review.create([
-        {
-          contract: contract._id,
-          reviewer: clientUser._id,
-          reviewee: aarav._id,
-          rating: { communication: 5, quality: 5, deadline: 5, overall: 5 },
-          comment: 'Aarav is an exceptional full-stack developer. Delivered the CRM prototype days ahead of schedule with immaculate code quality and detailed documentation!'
-        },
-        {
-          contract: contract._id,
-          reviewer: clientUser._id,
-          reviewee: aarav._id,
-          rating: { communication: 5, quality: 5, deadline: 4, overall: 5 },
-          comment: 'High technical competence in React and Node.js. Super responsive and proactive in addressing edge cases.'
-        }
-      ]);
-      console.log('✓ Created Reviews for Aarav Desai');
+    const existingReview = await Review.findOne({ contract: contract._id, reviewer: clientUser._id });
+    if (!existingReview) {
+      await Review.create({
+        contract: contract._id,
+        reviewer: clientUser._id,
+        reviewee: aarav._id,
+        rating: { communication: 5, quality: 5, deadline: 5, overall: 5 },
+        comment: 'Aarav is an exceptional full-stack developer. Delivered the CRM prototype days ahead of schedule with immaculate code quality and detailed documentation!'
+      });
+      console.log('✓ Created Review for Aarav Desai');
     }
 
     // 8. Conversation & Messages with Rajesh Sharma / Kumar
