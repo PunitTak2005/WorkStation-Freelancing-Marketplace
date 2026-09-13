@@ -10,6 +10,7 @@ import { cn } from '@/utils/cn';
 const BrandLogo = ({
   size = 'md',
   showText = true,
+  iconOnly = false,
   stacked = false,
   className,
   containerClassName,
@@ -63,6 +64,37 @@ const BrandLogo = ({
   };
 
   const currentSize = sizeConfig[size] || sizeConfig.md;
+
+  // Dedicated Collapsed / Icon-Only Monogram Variant (36x36-40x40px perfectly centered)
+  if (iconOnly) {
+    return (
+      <div
+        className={cn(
+          'relative flex-shrink-0 flex items-center justify-center bg-white rounded-xl shadow-md ring-1 ring-slate-200/90 dark:ring-slate-700/80 transition-all duration-300 ease-out select-none',
+          size === 'xs' ? 'w-8 h-8 p-1' : size === 'lg' ? 'w-12 h-12 p-2' : 'w-10 h-10 p-1.5',
+          containerClassName
+        )}
+        title="WorkStation"
+      >
+        <svg
+          viewBox="0 0 36 36"
+          className={cn('w-full h-full object-contain', imgClassName)}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="36" height="36" rx="8" fill="#002366" />
+          <path
+            d="M7 11L11.5 25L18 16.5L24.5 25L29 11"
+            stroke="#FFFFFF"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx="18" cy="11.5" r="2" fill="#0A84FF" />
+        </svg>
+      </div>
+    );
+  }
 
   return (
     <div

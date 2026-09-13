@@ -74,26 +74,47 @@ const Sidebar = ({ isCollapsed, toggleCollapse, mobileOpen, setMobileOpen, role 
     }
   };
 
+  const isMinimized = isCollapsed && !mobileOpen;
+
   const sidebarContent = (
     <div className="h-full flex flex-col bg-white dark:bg-[#080B12] border-r border-[#D6EFFF] dark:border-[#22324A] transition-colors duration-300">
       {/* Sidebar Header */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-[#D6EFFF] dark:border-[#22324A]">
-        <NavLink to="/dashboard" className="flex items-center gap-2.5 overflow-hidden">
+      <div className={cn(
+        'h-16 flex items-center border-b border-[#D6EFFF] dark:border-[#22324A] transition-all duration-300 px-3',
+        isMinimized ? 'justify-center relative' : 'justify-between px-4'
+      )}>
+        <NavLink
+          to="/dashboard"
+          className={cn(
+            'flex items-center gap-2.5 min-w-0 select-none transition-all duration-300',
+            isMinimized ? 'justify-center mx-auto' : 'overflow-hidden'
+          )}
+          title="WorkStation Dashboard"
+        >
           <BrandLogo
             size="sm"
-            showText={!isCollapsed || mobileOpen}
+            showText={!isMinimized}
+            iconOnly={isMinimized}
           />
         </NavLink>
+
+        {/* Toggle Collapse Button on Desktop */}
         <button
           onClick={toggleCollapse}
-          className="hidden md:flex p-1.5 rounded-lg bg-[#EAF6FF] dark:bg-[#162235] text-slate-500 hover:text-[#0A84FF] transition-colors"
-          aria-label="Toggle sidebar"
+          className={cn(
+            'hidden md:flex p-1.5 rounded-lg bg-[#EAF6FF] dark:bg-[#162235] text-slate-500 hover:text-[#0A84FF] transition-all duration-200 shrink-0 shadow-sm',
+            isMinimized ? 'absolute -right-3 top-5 z-50 rounded-full border border-[#D6EFFF] dark:border-[#22324A] bg-white dark:bg-[#0E1522] p-1 text-slate-600 dark:text-slate-300 hover:scale-110' : ''
+          )}
+          aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          title={isCollapsed ? 'Expand sidebar (Ctrl+B)' : 'Collapse sidebar (Ctrl+B)'}
         >
-          {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+          {isCollapsed ? <ChevronRight size={isMinimized ? 14 : 18} /> : <ChevronLeft size={18} />}
         </button>
+
+        {/* Mobile Close Button */}
         <button
           onClick={() => setMobileOpen(false)}
-          className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
+          className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 shrink-0"
           aria-label="Close sidebar"
         >
           <X size={22} />
@@ -101,7 +122,7 @@ const Sidebar = ({ isCollapsed, toggleCollapse, mobileOpen, setMobileOpen, role 
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 overflow-y-auto py-4 px-2.5 space-y-1">
+      <nav className={cn('flex-1 overflow-y-auto py-4 space-y-1.5', isMinimized ? 'px-2' : 'px-3')}>
         {links.map((link) => {
           const Icon = link.icon;
           return (
@@ -112,56 +133,75 @@ const Sidebar = ({ isCollapsed, toggleCollapse, mobileOpen, setMobileOpen, role 
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
                 cn(
-                  'flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-all group border-l-4',
+                  'flex items-center rounded-xl text-sm font-medium transition-all duration-200 group relative',
+                  isMinimized
+                    ? 'justify-center w-12 h-11 mx-auto'
+                    : 'px-3 py-2.5 border-l-4',
                   isActive
-                    ? 'border-[#0A84FF] bg-[#EAF6FF] text-[#0A84FF] dark:bg-[#162235] dark:text-[#2FA8FF] dark:border-[#2FA8FF] font-semibold shadow-sm shadow-[#0A84FF]/10'
-                    : 'border-transparent text-slate-600 hover:bg-[#F8FBFF] dark:text-[#A8C0D8] dark:hover:bg-[#101826] hover:text-[#0A84FF] dark:hover:text-[#2FA8FF]'
+                    ? isMinimized
+                      ? 'bg-[#EAF6FF] text-[#0A84FF] dark:bg-[#162235] dark:text-[#2FA8FF] shadow-sm font-semibold'
+                      : 'border-[#0A84FF] bg-[#EAF6FF] text-[#0A84FF] dark:bg-[#162235] dark:text-[#2FA8FF] dark:border-[#2FA8FF] font-semibold shadow-sm shadow-[#0A84FF]/10'
+                    : isMinimized
+                      ? 'text-slate-600 hover:bg-[#F8FBFF] dark:text-[#A8C0D8] dark:hover:bg-[#101826] hover:text-[#0A84FF] dark:hover:text-[#2FA8FF]'
+                      : 'border-transparent text-slate-600 hover:bg-[#F8FBFF] dark:text-[#A8C0D8] dark:hover:bg-[#101826] hover:text-[#0A84FF] dark:hover:text-[#2FA8FF]'
                 )
               }
-              title={isCollapsed && !mobileOpen ? link.name : undefined}
+              title={isMinimized ? link.name : undefined}
             >
-              <Icon className={cn('flex-shrink-0 w-5 h-5 transition-transform group-hover:scale-105', isCollapsed && !mobileOpen ? 'mx-auto' : 'mr-3')} />
-              <span className={cn('whitespace-nowrap transition-all duration-300', isCollapsed && !mobileOpen ? 'opacity-0 w-0 hidden' : 'opacity-100')}>
-                {link.name}
-              </span>
+              <Icon className={cn('shrink-0 w-5 h-5 transition-transform duration-200 group-hover:scale-110', !isMinimized && 'mr-3')} />
+              {!isMinimized && (
+                <span className="whitespace-nowrap truncate flex-1 font-medium transition-opacity duration-200">
+                  {link.name}
+                </span>
+              )}
             </NavLink>
           );
         })}
       </nav>
 
       {/* User Mini Profile & Logout */}
-      <div className="p-3 border-t border-[#D6EFFF] dark:border-[#22324A] space-y-2">
-        <div className={cn('flex items-center p-2 rounded-xl bg-[#F8FBFF] dark:bg-[#101826] border border-[#D6EFFF]/80 dark:border-[#22324A]', isCollapsed && !mobileOpen ? 'justify-center' : 'space-x-3')}>
+      <div className={cn('p-3 border-t border-[#D6EFFF] dark:border-[#22324A] space-y-2', isMinimized && 'px-2')}>
+        <div
+          className={cn(
+            'flex items-center rounded-xl bg-[#F8FBFF] dark:bg-[#101826] border border-[#D6EFFF]/80 dark:border-[#22324A] transition-all duration-200',
+            isMinimized ? 'justify-center p-2' : 'p-2 space-x-3'
+          )}
+          title={isMinimized ? `${user?.name || 'Account'} (${user?.role || role})` : undefined}
+        >
           <Avatar
             src={user?.avatar?.url || user?.avatar || (user?.role === 'freelancer' ? '/freelancers/aarav-desai.webp' : null)}
             name={user?.name || 'User'}
-            size={isCollapsed && !mobileOpen ? 'sm' : 'dashboard'}
+            size={isMinimized ? 'sm' : 'dashboard'}
           />
-          <div className={cn('flex-1 min-w-0 transition-all duration-300', isCollapsed && !mobileOpen ? 'hidden' : 'block')}>
-            <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">
-              {user?.name || 'Account'}
-            </p>
-            <div className="flex items-center gap-1 mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span className="text-[11px] font-medium text-slate-500 dark:text-[#A8C0D8] capitalize">
-                {user?.role || role}
-              </span>
+          {!isMinimized && (
+            <div className="flex-1 min-w-0 transition-all duration-200">
+              <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">
+                {user?.name || 'Account'}
+              </p>
+              <div className="flex items-center gap-1 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                <span className="text-[11px] font-medium text-slate-500 dark:text-[#A8C0D8] capitalize truncate">
+                  {user?.role || role}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <button
           onClick={handleLogout}
           className={cn(
-            'w-full flex items-center px-3 py-2 text-sm font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-xl transition-colors',
-            isCollapsed && !mobileOpen ? 'justify-center' : 'gap-2.5'
+            'w-full flex items-center text-sm font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-xl transition-colors',
+            isMinimized ? 'justify-center py-2 h-10' : 'px-3 py-2 gap-2.5'
           )}
           title="Sign out of Workstation"
         >
-          <LogOut size={18} className="flex-shrink-0" />
-          <span className={cn('whitespace-nowrap transition-all duration-300', isCollapsed && !mobileOpen ? 'hidden' : 'block')}>
-            Logout
-          </span>
+          <LogOut size={18} className="shrink-0" />
+          {!isMinimized && (
+            <span className="whitespace-nowrap transition-opacity duration-200">
+              Logout
+            </span>
+          )}
         </button>
       </div>
     </div>
