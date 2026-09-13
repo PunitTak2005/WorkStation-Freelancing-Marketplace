@@ -62,7 +62,8 @@ export const getInvoice = async (req, res, next) => {
     }
 
     if (payment.payer._id.toString() !== req.user._id.toString() &&
-        payment.recipient._id.toString() !== req.user._id.toString()) {
+        payment.recipient._id.toString() !== req.user._id.toString() &&
+        req.user.role !== 'admin') {
       throw new ApiError(403, 'Not authorized to view this invoice');
     }
 
