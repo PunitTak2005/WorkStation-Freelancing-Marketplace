@@ -9,24 +9,41 @@ export const formatCurrency = (amount, currency = 'INR') => {
   }).format(amount || 0);
 };
 
-export const formatCompactCurrency = (amount, currency = 'INR') => {
+/**
+ * Formats a numeric currency value into compact Indian notation:
+ * - K (Thousand)
+ * - L (Lakh)
+ * - Cr (Crore)
+ * Rounds to at most one decimal place and removes trailing '.0'.
+ * Example: 12450 -> '₹12.5K', 85999 -> '₹86K', 1245678 -> '₹12.5L', 12345678 -> '₹1.2Cr'
+ */
+export const formatCompactINR = (amount) => {
   const val = Number(amount) || 0;
-  // For small to medium amounts under 1 Lakh, use standard currency format
-  if (Math.abs(val) < 100000) {
-    return formatCurrency(val, currency);
+  const isNegative = val < 0;
+  const abs = Math.abs(val);
+
+  let formatted = '';
+  if (abs >= 10000000) { // 1 Crore = 10,000,000
+    const cr = Math.round((abs / 10000000) * 10) / 10;
+    formatted = (cr % 1 === 0 ? cr.toFixed(0) : cr.toFixed(1)) + 'Cr';
+  } else if (abs >= 100000) { // 1 Lakh = 100,000
+    const l = Math.round((abs / 100000) * 10) / 10;
+    formatted = (l % 1 === 0 ? l.toFixed(0) : l.toFixed(1)) + 'L';
+  } else if (abs >= 1000) { // 1 Thousand = 1,000
+    const k = Math.round((abs / 1000) * 10) / 10;
+    formatted = (k % 1 === 0 ? k.toFixed(0) : k.toFixed(1)) + 'K';
+  } else {
+    formatted = Math.round(abs).toString();
   }
-  // For larger amounts, provide compact notation using en-IN / compact notation
-  try {
-    const compact = new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency,
-      notation: 'compact',
-      maximumFractionDigits: 1,
-    }).format(val);
-    return compact;
-  } catch {
-    return formatCurrency(val, currency);
+
+  return (isNegative ? '-₹' : '₹') + formatted;
+};
+
+export const formatCompactCurrency = (amount, currency = 'INR') => {
+  if (currency === 'INR') {
+    return formatCompactINR(amount);
   }
+  return formatCurrency(amount, currency);
 };
 
 export const formatDate = (date) => format(new Date(date), 'MMM dd, yyyy');

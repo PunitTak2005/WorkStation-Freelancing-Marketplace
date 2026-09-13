@@ -19,7 +19,7 @@ import api from '@/services/api';
 import Card from '@/components/common/Card';
 import Badge from '@/components/common/Badge';
 import Skeleton from '@/components/common/Skeleton';
-import { formatDate, formatCurrency, formatCompactCurrency } from '@/utils/formatters';
+import { formatDate, formatCurrency, formatCompactCurrency, formatCompactINR } from '@/utils/formatters';
 import { buildAndExportPDF, PDF_COLORS, renderLogoSvg } from '@/utils/pdf/pdfEngine';
 import { downloadInvoicePDF } from '@/utils/pdf';
 import { cn } from '@/utils/cn';
@@ -571,7 +571,7 @@ export default function AdminPaymentsPage() {
             </div>
             <div className="min-w-0 mt-2" title={formatCurrency(kpi?.grossRevenue ?? 0)}>
               <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
-                {formatCurrency(kpi?.grossRevenue ?? 0)}
+                {formatCompactINR(kpi?.grossRevenue ?? 0)}
               </p>
             </div>
           </div>
@@ -591,7 +591,7 @@ export default function AdminPaymentsPage() {
             </div>
             <div className="min-w-0 mt-2" title={formatCurrency(kpi?.platformFees ?? 0)}>
               <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
-                {formatCurrency(kpi?.platformFees ?? 0)}
+                {formatCompactINR(kpi?.platformFees ?? 0)}
               </p>
             </div>
           </div>
@@ -609,7 +609,7 @@ export default function AdminPaymentsPage() {
             </div>
             <div className="min-w-0 mt-2" title={formatCurrency(kpi?.totalPayouts ?? (kpi?.grossRevenue ? kpi.grossRevenue * 0.9 : 0))}>
               <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
-                {formatCurrency(kpi?.totalPayouts ?? (kpi?.grossRevenue ? kpi.grossRevenue * 0.9 : 0))}
+                {formatCompactINR(kpi?.totalPayouts ?? (kpi?.grossRevenue ? kpi.grossRevenue * 0.9 : 0))}
               </p>
             </div>
           </div>
@@ -627,7 +627,7 @@ export default function AdminPaymentsPage() {
             </div>
             <div className="min-w-0 mt-2" title={formatCurrency(kpi?.escrowBalance ?? 0)}>
               <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
-                {formatCurrency(kpi?.escrowBalance ?? 0)}
+                {formatCompactINR(kpi?.escrowBalance ?? 0)}
               </p>
             </div>
           </div>
@@ -829,7 +829,7 @@ export default function AdminPaymentsPage() {
               <span className="text-xs text-slate-400 font-medium truncate block">Locked in Escrow</span>
               <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.lockedInEscrow ?? 0)}>
                 <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
-                  {formatCurrency(escrowMetrics?.lockedInEscrow ?? 0)}
+                  {formatCompactINR(escrowMetrics?.lockedInEscrow ?? 0)}
                 </h4>
               </div>
             </div>
@@ -843,7 +843,7 @@ export default function AdminPaymentsPage() {
               <span className="text-xs text-slate-400 font-medium truncate block">Pending Release</span>
               <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.pendingRelease ?? 0)}>
                 <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-blue-600 dark:text-blue-400 tracking-tight break-words truncate">
-                  {formatCurrency(escrowMetrics?.pendingRelease ?? 0)}
+                  {formatCompactINR(escrowMetrics?.pendingRelease ?? 0)}
                 </h4>
               </div>
             </div>
@@ -857,7 +857,7 @@ export default function AdminPaymentsPage() {
               <span className="text-xs text-slate-400 font-medium truncate block">Released Recently</span>
               <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.releasedToday ?? 42500)}>
                 <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-emerald-600 dark:text-emerald-400 tracking-tight break-words truncate">
-                  {formatCurrency(escrowMetrics?.releasedToday ?? 42500)}
+                  {formatCompactINR(escrowMetrics?.releasedToday ?? 42500)}
                 </h4>
               </div>
             </div>
@@ -871,7 +871,7 @@ export default function AdminPaymentsPage() {
               <span className="text-xs text-slate-400 font-medium truncate block">Disputed Funds</span>
               <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.disputedFunds ?? 0)}>
                 <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-rose-600 dark:text-rose-400 tracking-tight break-words truncate">
-                  {formatCurrency(escrowMetrics?.disputedFunds ?? 0)}
+                  {formatCompactINR(escrowMetrics?.disputedFunds ?? 0)}
                 </h4>
               </div>
             </div>
