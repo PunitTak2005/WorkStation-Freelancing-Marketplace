@@ -1,0 +1,14 @@
+# WorkStation Robots.txt
+User-agent: *
+Allow: /
+Allow: /projects
+Allow: /freelancers
+Allow: /login
+Allow: /register
+
+# Disallow private and administrative user portals from indexing
+Disallow: /dashboard/
+Disallow: /dashboard/*
+Disallow: /api/
+
+Sitemap: https://workstation.vercel.app/sitemap.xml

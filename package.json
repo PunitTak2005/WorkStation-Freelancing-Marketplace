@@ -1,0 +1,21 @@
+{
+  "name": "Workstation",
+  "version": "1.0.0",
+  "description": "Workstation - Premium MERN Freelancing Marketplace",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "server": "npm run dev --workspace=server",
+    "client": "npm run dev --workspace=client",
+    "seed": "npm run seed --workspace=server",
+    "seed:revenue": "npm run seed:revenue --workspace=server",
+    "seed:admin-users": "npm run seed:admin-users --workspace=server",
+    "seed:admin-jobs": "npm run seed:admin-jobs --workspace=server",
+    "seed:admin-payments": "npm run seed:admin-payments --workspace=server",
+    "seed:destroy": "npm run seed:destroy --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

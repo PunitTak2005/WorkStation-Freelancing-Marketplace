@@ -1,0 +1,602 @@
+[
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd92",
+    "title": "Build a Full-Stack MERN B2B E-Commerce Marketplace",
+    "category": "Web Development",
+    "budget": {
+      "min": 65000,
+      "max": 95000,
+      "type": "fixed"
+    },
+    "description": "Looking for a seasoned MERN engineer to architect a high-throughput multi-vendor platform with payment gateway integration, inventory tracking, and Redis caching.",
+    "skillsRequired": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "Tailwind CSS"
+    ],
+    "deadline": "2026-09-28T00:00:00.000Z",
+    "timeline": "30 Days",
+    "featuredStatus": "In Progress",
+    "client": {
+      "name": "Arjun Verma",
+      "ratingsAverage": 4.9,
+      "ratingsCount": 42,
+      "verified": true,
+      "company": "TechNova Global",
+      "location": "Bengaluru, Karnataka",
+      "role": "Chief Architect",
+      "initials": "AV"
+    },
+    "freelancer": {
+      "name": "Aditya Roy",
+      "role": "Full Stack Developer",
+      "image": "/freelancers/aditya-roy.webp",
+      "rating": 4.95,
+      "completedProjects": 120,
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "AWS"
+      ]
+    },
+    "experienceLevel": "expert",
+    "proposalCount": 18,
+    "locationType": "remote",
+    "createdAt": "2026-09-02T10:30:00.000Z",
+    "status": "open",
+    "company": "TechNova Global",
+    "image": "/projects/mern-ecommerce.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd93",
+    "title": "Cross-Platform iOS & Android Fitness Tracker App",
+    "category": "Mobile App Development",
+    "budget": {
+      "min": 50000,
+      "max": 80000,
+      "type": "fixed"
+    },
+    "description": "Build an intuitive fitness application using React Native or Flutter. Must integrate Apple HealthKit and Google Fit APIs with offline sync capabilities.",
+    "skillsRequired": [
+      "React Native",
+      "TypeScript",
+      "Mobile App",
+      "Redux Toolkit"
+    ],
+    "deadline": "2026-09-24T00:00:00.000Z",
+    "timeline": "35 Days",
+    "featuredStatus": "Featured",
+    "client": {
+      "name": "Kavita Nair",
+      "ratingsAverage": 4.8,
+      "ratingsCount": 19,
+      "verified": true,
+      "company": "FitPulse Studio",
+      "location": "Mumbai, Maharashtra",
+      "role": "Head of Mobile Product",
+      "initials": "KN"
+    },
+    "freelancer": {
+      "name": "Divya Chaudary",
+      "role": "Senior Mobile App Engineer",
+      "image": "/freelancers/divya-chaudary.webp",
+      "rating": 4.96,
+      "completedProjects": 78,
+      "skills": [
+        "React Native",
+        "TypeScript",
+        "Mobile App",
+        "Redux Toolkit"
+      ]
+    },
+    "experienceLevel": "intermediate",
+    "proposalCount": 16,
+    "locationType": "remote",
+    "createdAt": "2026-09-03T08:15:00.000Z",
+    "status": "open",
+    "company": "FitPulse Studio",
+    "image": "/projects/fitness-tracker-app.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd94",
+    "title": "FinTech SaaS Dashboard & Design System Overhaul",
+    "category": "UI/UX Design",
+    "budget": {
+      "min": 40000,
+      "max": 65000,
+      "type": "fixed"
+    },
+    "description": "We need a comprehensive Figma design system and high-fidelity prototypes for our wealth management analytics SaaS. Clean typography, dark mode tokens required.",
+    "skillsRequired": [
+      "Figma",
+      "UI/UX Design",
+      "Design Systems",
+      "Prototyping"
+    ],
+    "deadline": "2026-09-18T00:00:00.000Z",
+    "timeline": "21 Days",
+    "featuredStatus": "Featured",
+    "client": {
+      "name": "Rohit Mehta",
+      "ratingsAverage": 5,
+      "ratingsCount": 31,
+      "verified": true,
+      "company": "Apex Wealth Partners",
+      "location": "Gurugram, Haryana",
+      "role": "VP of Product Experience",
+      "initials": "RM"
+    },
+    "freelancer": {
+      "name": "Aditi Hegde",
+      "role": "Lead UI/UX Product Designer",
+      "image": "/freelancers/aditi-hegde.webp",
+      "rating": 4.98,
+      "completedProjects": 94,
+      "skills": [
+        "Figma",
+        "UI/UX Design",
+        "Design Systems",
+        "TailwindCSS"
+      ]
+    },
+    "experienceLevel": "expert",
+    "proposalCount": 24,
+    "locationType": "remote",
+    "createdAt": "2026-09-01T14:45:00.000Z",
+    "status": "open",
+    "company": "Apex Wealth Partners",
+    "image": "/projects/fintech-saas-dashboard.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd95",
+    "title": "Autonomous LLM Agent for Customer Support Automation",
+    "category": "AI & Machine Learning",
+    "budget": {
+      "min": 85000,
+      "max": 140000,
+      "type": "fixed"
+    },
+    "description": "Develop a Retrieval-Augmented Generation (RAG) assistant using LangChain and FastAPI backed by Pinecone vector search over our technical knowledge base.",
+    "skillsRequired": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "Vector DB",
+      "PyTorch"
+    ],
+    "deadline": "2026-10-05T00:00:00.000Z",
+    "timeline": "60 Days",
+    "featuredStatus": "In Progress",
+    "client": {
+      "name": "Sanjay Pillai",
+      "ratingsAverage": 4.95,
+      "ratingsCount": 68,
+      "verified": true,
+      "company": "Cognitive Cloud Labs",
+      "location": "Hyderabad, Telangana",
+      "role": "AI Research Director",
+      "initials": "SP"
+    },
+    "freelancer": {
+      "name": "Sanjay Singh",
+      "role": "AI & Machine Learning Engineer",
+      "image": "/freelancers/sanjay-singh.webp",
+      "rating": 4.92,
+      "completedProjects": 110,
+      "skills": [
+        "Python",
+        "FastAPI",
+        "LangChain",
+        "PyTorch"
+      ]
+    },
+    "experienceLevel": "expert",
+    "proposalCount": 21,
+    "locationType": "remote",
+    "createdAt": "2026-09-02T18:00:00.000Z",
+    "status": "open",
+    "company": "Cognitive Cloud Labs",
+    "image": "/projects/llm-support-agent.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd96",
+    "title": "Brand Identity, Typography & 3D Visual Guidelines",
+    "category": "Graphic Design",
+    "budget": {
+      "min": 30000,
+      "max": 45000,
+      "type": "fixed"
+    },
+    "description": "Create a distinctive visual brand identity for an emerging clean-tech brand including logo variations, color palette tokens, 3D product renders, and pitch deck templates.",
+    "skillsRequired": [
+      "Adobe Illustrator",
+      "Branding",
+      "3D Modeling",
+      "Photoshop"
+    ],
+    "deadline": "2026-09-22T00:00:00.000Z",
+    "timeline": "25 Days",
+    "featuredStatus": "High Priority",
+    "client": {
+      "name": "Meera Saxena",
+      "ratingsAverage": 4.7,
+      "ratingsCount": 14,
+      "verified": true,
+      "company": "Verde Innovations",
+      "location": "Pune, Maharashtra",
+      "role": "Creative Director",
+      "initials": "MS"
+    },
+    "freelancer": {
+      "name": "Ishita Sharma",
+      "role": "Brand Identity & Visual Designer",
+      "image": "/freelancers/ishita-sharma.webp",
+      "rating": 4.91,
+      "completedProjects": 86,
+      "skills": [
+        "Adobe Illustrator",
+        "Branding",
+        "3D Modeling",
+        "Photoshop"
+      ]
+    },
+    "experienceLevel": "intermediate",
+    "proposalCount": 11,
+    "locationType": "hybrid",
+    "createdAt": "2026-09-03T11:20:00.000Z",
+    "status": "open",
+    "company": "Verde Innovations",
+    "image": "/projects/brand-identity-guidelines.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd97",
+    "title": "Technical Whitepaper & SEO Blog Campaign for Web3 Security",
+    "category": "Content Writing",
+    "budget": {
+      "min": 25000,
+      "max": 40000,
+      "type": "fixed"
+    },
+    "description": "Produce 6 in-depth developer tutorials and an authoritative security whitepaper explaining smart contract formal verification and threat modeling.",
+    "skillsRequired": [
+      "Technical Writing",
+      "SEO Content",
+      "Cybersecurity",
+      "Blockchain"
+    ],
+    "deadline": "2026-09-25T00:00:00.000Z",
+    "timeline": "20 Days",
+    "featuredStatus": "Completed",
+    "client": {
+      "name": "Aditya Chauhan",
+      "ratingsAverage": 4.9,
+      "ratingsCount": 27,
+      "verified": true,
+      "company": "BlockGuard Security",
+      "location": "New Delhi",
+      "role": "Content & Research Lead",
+      "initials": "AC"
+    },
+    "freelancer": {
+      "name": "Meghna Das",
+      "role": "Technical Writer & Content Strategist",
+      "image": "/freelancers/meghna-das.webp",
+      "rating": 4.88,
+      "completedProjects": 72,
+      "skills": [
+        "Technical Writing",
+        "SEO Content",
+        "Cybersecurity",
+        "Blockchain"
+      ]
+    },
+    "experienceLevel": "intermediate",
+    "proposalCount": 8,
+    "locationType": "remote",
+    "createdAt": "2026-09-02T09:00:00.000Z",
+    "status": "open",
+    "company": "BlockGuard Security",
+    "image": "/projects/web3-security-whitepaper.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd98",
+    "title": "Performance Marketing Strategy & Google/Meta Ads Scale",
+    "category": "Digital Marketing",
+    "budget": {
+      "min": 35000,
+      "max": 60000,
+      "type": "fixed"
+    },
+    "description": "Manage our monthly paid acquisition spend, build high-converting landing page funnels, and decrease customer acquisition costs (CAC) for our D2C subscription brand.",
+    "skillsRequired": [
+      "Google Ads",
+      "Meta Ads",
+      "Conversion Rate Optimization",
+      "Analytics"
+    ],
+    "deadline": "2026-09-30T00:00:00.000Z",
+    "timeline": "30 Days",
+    "featuredStatus": "In Progress",
+    "client": {
+      "name": "Ritu Bhatia",
+      "ratingsAverage": 4.85,
+      "ratingsCount": 39,
+      "verified": true,
+      "company": "PureBotanicals D2C",
+      "location": "Ahmedabad, Gujarat",
+      "role": "Head of Growth Marketing",
+      "initials": "RB"
+    },
+    "freelancer": {
+      "name": "Kunal Bhatia",
+      "role": "Performance Growth Specialist",
+      "image": "/freelancers/kunal-bhatia.webp",
+      "rating": 4.85,
+      "completedProjects": 65,
+      "skills": [
+        "Google Ads",
+        "Meta Ads",
+        "Conversion Rate Optimization",
+        "Analytics"
+      ]
+    },
+    "experienceLevel": "intermediate",
+    "proposalCount": 15,
+    "locationType": "remote",
+    "createdAt": "2026-09-01T16:30:00.000Z",
+    "status": "open",
+    "company": "PureBotanicals D2C",
+    "image": "/projects/growth-marketing-scale.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd99",
+    "title": "4K SaaS Product Walkthrough & Explainer Animation",
+    "category": "Video Editing",
+    "budget": {
+      "min": 35000,
+      "max": 55000,
+      "type": "fixed"
+    },
+    "description": "Create a snappy 90-second 4K product introduction video featuring custom UI motion graphics, kinetic typography, professional sound design, and voiceover synchronization.",
+    "skillsRequired": [
+      "After Effects",
+      "Premiere Pro",
+      "Motion Graphics",
+      "Sound Design"
+    ],
+    "deadline": "2026-09-21T00:00:00.000Z",
+    "timeline": "14 Days",
+    "featuredStatus": "Featured",
+    "client": {
+      "name": "Manish Tiwari",
+      "ratingsAverage": 5,
+      "ratingsCount": 22,
+      "verified": true,
+      "company": "CloudSprint SaaS",
+      "location": "Noida, Uttar Pradesh",
+      "role": "Executive Media Producer",
+      "initials": "MT"
+    },
+    "freelancer": {
+      "name": "Rohan Kulkarni",
+      "role": "Motion & Video Creative Director",
+      "image": "/freelancers/rohan-kulkarni.webp",
+      "rating": 4.94,
+      "completedProjects": 92,
+      "skills": [
+        "After Effects",
+        "Premiere Pro",
+        "Motion Graphics",
+        "Sound Design"
+      ]
+    },
+    "experienceLevel": "expert",
+    "proposalCount": 12,
+    "locationType": "remote",
+    "createdAt": "2026-09-03T12:00:00.000Z",
+    "status": "open",
+    "company": "CloudSprint SaaS",
+    "image": "/projects/saas-video-animation.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd9a",
+    "title": "Cloud Infrastructure Penetration Testing & OWASP Compliance",
+    "category": "Cybersecurity",
+    "budget": {
+      "min": 90000,
+      "max": 160000,
+      "type": "fixed"
+    },
+    "description": "Perform full-scope grey-box penetration testing of AWS infrastructure, Kubernetes clusters, and GraphQL endpoints with executive compliance report.",
+    "skillsRequired": [
+      "Penetration Testing",
+      "AWS Security",
+      "OWASP",
+      "Kubernetes"
+    ],
+    "deadline": "2026-09-29T00:00:00.000Z",
+    "timeline": "45 Days",
+    "featuredStatus": "High Priority",
+    "client": {
+      "name": "Deepa Iyer",
+      "ratingsAverage": 4.95,
+      "ratingsCount": 85,
+      "verified": true,
+      "company": "SecureBank Digital",
+      "location": "Chennai, Tamil Nadu",
+      "role": "Chief Security Officer",
+      "initials": "DI"
+    },
+    "freelancer": {
+      "name": "Gaurav Sinha",
+      "role": "Cybersecurity & Systems Specialist",
+      "image": "/freelancers/gaurav-sinha.webp",
+      "rating": 5,
+      "completedProjects": 82,
+      "skills": [
+        "Penetration Testing",
+        "AWS Security",
+        "OWASP",
+        "Kubernetes"
+      ]
+    },
+    "experienceLevel": "expert",
+    "proposalCount": 14,
+    "locationType": "remote",
+    "createdAt": "2026-09-02T13:10:00.000Z",
+    "status": "open",
+    "company": "SecureBank Digital",
+    "image": "/projects/penetration-testing-cloud.webp"
+  },
+  {
+    "_id": "6a9e45b1c8f9d16fc199dd9b",
+    "title": "Customer Churn Prediction Pipeline & Tableau Dashboards",
+    "category": "Data Science",
+    "budget": {
+      "min": 55000,
+      "max": 85000,
+      "type": "fixed"
+    },
+    "description": "Build an end-to-end churn prediction pipeline using scikit-learn and XGBoost. Expose inferences through automated ETL jobs into executive Tableau dashboards.",
+    "skillsRequired": [
+      "Python",
+      "Machine Learning",
+      "Tableau",
+      "SQL",
+      "Pandas"
+    ],
+    "deadline": "2026-10-02T00:00:00.000Z",
+    "timeline": "40 Days",
+    "featuredStatus": "In Progress",
+    "client": {
+      "name": "Amit Joshi",
+      "ratingsAverage": 4.8,
+      "ratingsCount": 33,
+      "verified": true,
+      "company": "InsightAnalytics Corp",
+      "location": "Kolkata, West Bengal",
+      "role": "VP of Data Analytics",
+      "initials": "AJ"
+    },
+    "freelancer": {
+      "name": "Kavya Singh",
+      "role": "Data Scientist & Analytics Architect",
+      "image": "/freelancers/kavya-singh.webp",
+      "rating": 4.93,
+      "completedProjects": 89,
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Tableau",
+        "Pandas"
+      ]
+    },
+    "experienceLevel": "intermediate",
+    "proposalCount": 19,
+    "locationType": "remote",
+    "createdAt": "2026-09-01T11:40:00.000Z",
+    "status": "open",
+    "company": "InsightAnalytics Corp",
+    "image": "/projects/churn-prediction-data.webp"
+  },
+  {
+    "_id": "6a9e26bf14bf79cf730acff1",
+    "title": "FinTrack Finance Dashboard",
+    "category": "Web Development",
+    "budget": {
+      "min": 65000,
+      "max": 65000,
+      "type": "fixed"
+    },
+    "description": "Build a modern responsive finance analytics dashboard for a fintech startup. The dashboard should display transactions, revenue insights, expense tracking, interactive charts, user authentication, and role-based access.",
+    "skillsRequired": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Chart.js",
+      "JWT Authentication",
+      "REST APIs",
+      "Tailwind CSS"
+    ],
+    "deadline": "2026-10-12T00:00:00.000Z",
+    "timeline": "5 Weeks",
+    "status": "open",
+    "featured": true,
+    "featuredStatus": "Open",
+    "client": {
+      "name": "Aarav Mehta",
+      "company": "FinTrack Solutions",
+      "location": "Bengaluru, Karnataka",
+      "role": "Founder & CEO",
+      "ratingsAverage": 4.96,
+      "ratingsCount": 47,
+      "verified": true,
+      "initials": "AM"
+    },
+    "company": "FinTrack Solutions",
+    "experienceLevel": "intermediate",
+    "proposalCount": 8,
+    "locationType": "remote",
+    "image": "/projects/fintrack-finance-dashboard.webp",
+    "deliverables": [
+      "Responsive dashboard",
+      "User login/signup",
+      "Revenue analytics",
+      "Expense reports",
+      "Export reports",
+      "Admin panel"
+    ],
+    "createdAt": "2026-09-05T12:00:00.000Z"
+  },
+  {
+    "_id": "6a9e26bf14bf79cf730acff4",
+    "title": "LearnSphere Mobile UI Design",
+    "category": "UI/UX Design",
+    "budget": {
+      "min": 32000,
+      "max": 32000,
+      "type": "fixed"
+    },
+    "description": "Design a clean and engaging mobile UI for an e-learning application. The app should include onboarding, authentication, course browsing, video lessons, quizzes, certificates, and profile screens.",
+    "skillsRequired": [
+      "Figma",
+      "UI Design",
+      "UX Research",
+      "Prototyping",
+      "Design Systems",
+      "Mobile Design"
+    ],
+    "deadline": "2026-09-28T00:00:00.000Z",
+    "timeline": "3 Weeks",
+    "status": "open",
+    "featured": true,
+    "featuredStatus": "Open",
+    "client": {
+      "name": "Priya Sharma",
+      "company": "LearnSphere Academy",
+      "location": "Jaipur, Rajasthan",
+      "role": "Head of Product & Design",
+      "ratingsAverage": 4.98,
+      "ratingsCount": 62,
+      "verified": true,
+      "initials": "PS"
+    },
+    "company": "LearnSphere Academy",
+    "experienceLevel": "intermediate",
+    "proposalCount": 15,
+    "locationType": "remote",
+    "image": "/projects/learnsphere-mobile-ui.webp",
+    "deliverables": [
+      "15+ mobile screens",
+      "Interactive prototype",
+      "Design system",
+      "Dark & Light mode",
+      "Developer handoff assets"
+    ],
+    "createdAt": "2026-09-07T07:00:00.000Z"
+  }
+]

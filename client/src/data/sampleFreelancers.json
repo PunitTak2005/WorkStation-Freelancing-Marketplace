@@ -1,0 +1,257 @@
+[
+  {
+    "_id": "f-mayank",
+    "name": "Mayank Joshi",
+    "title": "Full Stack Developer",
+    "hourlyRate": 2500,
+    "location": "Bengaluru, Karnataka",
+    "experience": "expert",
+    "yearsOfExperience": 5,
+    "completedProjects": 68,
+    "clientSatisfaction": 99,
+    "ratingsAverage": 4.96,
+    "ratingsCount": 112,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/mayank-joshi.png" },
+    "image": "/freelancers/mayank-joshi.png",
+    "bio": "Senior Full Stack Developer specializing in React, Next.js, Node.js, and cloud-native scalable systems. Passionate about performant user experiences, clean component architecture, and responsive SaaS interfaces.",
+    "skills": ["React", "Node.js", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "REST API"],
+    "education": [
+      { "degree": "B.Tech in Computer Science", "institution": "NIT Trichy", "year": 2019 }
+    ],
+    "certifications": ["AWS Certified Solutions Architect", "Meta Front-End Developer"],
+    "languages": ["English (Fluent)", "Hindi (Native)"],
+    "socialLinks": { "github": "https://github.com/mayankjoshi", "linkedin": "https://linkedin.com/in/mayankjoshi" },
+    "createdAt": "2024-01-10T00:00:00.000Z"
+  },
+  {
+    "_id": "f-abhishek",
+    "name": "Abhishek Nayak",
+    "title": "Full Stack Node.js Engineer",
+    "hourlyRate": 2400,
+    "location": "Bengaluru, Karnataka",
+    "experience": "expert",
+    "yearsOfExperience": 6,
+    "completedProjects": 74,
+    "clientSatisfaction": 99,
+    "ratingsAverage": 4.94,
+    "ratingsCount": 98,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/abhishek-nayak.png" },
+    "image": "/freelancers/abhishek-nayak.png",
+    "bio": "Full Stack Node.js Engineer specializing in high-throughput backend APIs, microservices, Express, MongoDB, and reactive TypeScript applications with clean architecture.",
+    "skills": ["Node.js", "Express", "TypeScript", "MongoDB", "React", "Docker", "AWS", "REST API"],
+    "education": [
+      { "degree": "B.Tech in Information Technology", "institution": "BITS Pilani", "year": 2018 }
+    ],
+    "certifications": ["AWS Certified Developer Associate", "Node.js Application Developer (JSNAD)"],
+    "languages": ["English (Fluent)", "Hindi (Native)"],
+    "socialLinks": { "github": "https://github.com/abhisheknayak", "linkedin": "https://linkedin.com/in/abhisheknayak" },
+    "createdAt": "2024-01-12T00:00:00.000Z"
+  },
+  {
+    "_id": "f1",
+    "name": "Aarav Sharma",
+    "title": "Senior Full Stack MERN & Cloud Architect",
+    "hourlyRate": 2200,
+    "location": "Bengaluru, Karnataka",
+    "experience": "expert",
+    "yearsOfExperience": 6,
+    "completedProjects": 87,
+    "clientSatisfaction": 99,
+    "ratingsAverage": 4.95,
+    "ratingsCount": 128,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/aarav-sharma.webp" },
+    "bio": "I am a Full Stack MERN engineer specializing in architecting distributed web applications, high-throughput microservices, and reactive real-time interfaces. With 6+ years of experience delivering production SaaS solutions, I focus on bulletproof API security, database index optimization, and pixel-perfect design fidelity.",
+    "skills": ["React", "Node.js", "MongoDB", "Express", "TypeScript", "Redis", "Docker", "AWS"],
+    "portfolio": [
+      {
+        "title": "FinTech Wealth Analytics Dashboard",
+        "category": "Web Development",
+        "images": [{ "url": "/projects/analytics-dashboard.webp" }],
+        "description": "Multi-tenant financial telemetry platform processing real-time stock portfolios with WebSockets and sub-second chart aggregations.",
+        "projectUrl": "https://github.com"
+      },
+      {
+        "title": "Cloud Logistics ERP Platform",
+        "category": "Enterprise SaaS",
+        "images": [{ "url": "/projects/crm-dashboard.webp" }],
+        "description": "End-to-end fleet and supply chain tracking system built with Node.js and MongoDB handling 50k daily shipment events.",
+        "projectUrl": "https://github.com"
+      }
+    ],
+    "education": [
+      { "degree": "B.Tech in Computer Science & Engineering", "institution": "RV College of Engineering, Bengaluru", "year": 2018 }
+    ],
+    "certifications": ["AWS Certified Solutions Architect", "MongoDB Certified Developer Associate"],
+    "languages": ["English (Fluent)", "Hindi (Native)", "Kannada (Conversational)"],
+    "socialLinks": { "github": "https://github.com", "linkedin": "https://linkedin.com", "website": "https://workstation.dev" },
+    "createdAt": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "_id": "f2",
+    "name": "Neha Singh",
+    "title": "Lead UI/UX Designer & Design Systems Lead",
+    "hourlyRate": 1900,
+    "location": "Mumbai, Maharashtra",
+    "experience": "expert",
+    "yearsOfExperience": 5,
+    "completedProjects": 64,
+    "clientSatisfaction": 98,
+    "ratingsAverage": 4.92,
+    "ratingsCount": 94,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/neha-singh.webp" },
+    "bio": "Human-centered product designer specializing in complex SaaS interfaces, interactive design systems, and mobile product experiences. I turn ambiguous enterprise workflows into intuitive, high-conversion visual architectures.",
+    "skills": ["Figma", "UI/UX Design", "Design Systems", "Prototyping", "User Research", "Wireframing"],
+    "portfolio": [
+      {
+        "title": "SaaS Design Token System & Component Kit",
+        "category": "Design System",
+        "images": [{ "url": "/projects/learnsphere-mobile-ui.webp" }],
+        "description": "Unified 140+ component token-based Figma library for an enterprise health-tech platform.",
+        "projectUrl": "https://figma.com"
+      }
+    ],
+    "education": [
+      { "degree": "Master of Design (Interaction Design)", "institution": "Industrial Design Centre, IIT Bombay", "year": 2019 }
+    ],
+    "certifications": ["Nielsen Norman Group UX Master Certified"],
+    "languages": ["English (Fluent)", "Hindi (Fluent)", "Marathi (Native)"],
+    "socialLinks": { "linkedin": "https://linkedin.com", "website": "https://nehasingh.design" },
+    "createdAt": "2024-02-10T00:00:00.000Z"
+  },
+  {
+    "_id": "f3",
+    "name": "Rahul Verma",
+    "title": "AI & Deep Learning Engineer",
+    "hourlyRate": 2600,
+    "location": "Hyderabad, Telangana",
+    "experience": "expert",
+    "yearsOfExperience": 7,
+    "completedProjects": 52,
+    "clientSatisfaction": 100,
+    "ratingsAverage": 5.0,
+    "ratingsCount": 76,
+    "availability": "busy",
+    "avatar": { "url": "/freelancers/rahul-verma.webp" },
+    "bio": "AI practitioner building production LLM agents, semantic search engines, and computer vision pipelines. Experienced in fine-tuning open-source models, vector retrieval (RAG), and deploying low-latency FastAPI inference microservices.",
+    "skills": ["Python", "PyTorch", "FastAPI", "LangChain", "Vector Databases", "Transformers", "NLP"],
+    "portfolio": [
+      {
+        "title": "Enterprise RAG Intelligence Search",
+        "category": "Artificial Intelligence",
+        "images": [{ "url": "/projects/ai-resume-analyzer.webp" }],
+        "description": "Autonomous semantic document analysis agent with citation extraction over 1M+ PDF pages.",
+        "projectUrl": "https://github.com"
+      }
+    ],
+    "education": [
+      { "degree": "M.Tech in Artificial Intelligence", "institution": "IIIT Hyderabad", "year": 2017 }
+    ],
+    "certifications": ["DeepLearning.AI Generative AI Specialist", "Google Cloud Professional ML Engineer"],
+    "languages": ["English (Fluent)", "Hindi (Fluent)", "Telugu (Conversational)"],
+    "socialLinks": { "github": "https://github.com", "linkedin": "https://linkedin.com" },
+    "createdAt": "2024-01-20T00:00:00.000Z"
+  },
+  {
+    "_id": "f4",
+    "name": "Priya Mehta",
+    "title": "Technical Content Strategist & Security Writer",
+    "hourlyRate": 1500,
+    "location": "Pune, Maharashtra",
+    "experience": "intermediate",
+    "yearsOfExperience": 4,
+    "completedProjects": 110,
+    "clientSatisfaction": 99,
+    "ratingsAverage": 4.88,
+    "ratingsCount": 82,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/priya-mehta.webp" },
+    "bio": "Writing clear, high-authority developer documentation, technical architecture whitepapers, and SEO-driven engineering blog posts for B2B SaaS and cloud startups.",
+    "skills": ["Technical Writing", "SEO Content", "API Documentation", "Cloud Architecture", "Markdown"],
+    "portfolio": [
+      {
+        "title": "Developer Hub & API Reference Guides",
+        "category": "Documentation",
+        "images": [{ "url": "/projects/web3-security-whitepaper.webp" }],
+        "description": "Comprehensive REST API tutorials and architectural walkthroughs for a fintech payments gateway.",
+        "projectUrl": "https://workstation.dev"
+      }
+    ],
+    "education": [
+      { "degree": "B.S. in Information Technology", "institution": "COEP Pune", "year": 2020 }
+    ],
+    "certifications": ["Google Technical Writing Certified"],
+    "languages": ["English (Native proficiency)", "Hindi (Fluent)"],
+    "socialLinks": { "linkedin": "https://linkedin.com", "website": "https://priyamehta.tech" },
+    "createdAt": "2024-03-01T00:00:00.000Z"
+  },
+  {
+    "_id": "f5",
+    "name": "Rohan Kulkarni",
+    "title": "Senior React Native & Mobile App Engineer",
+    "hourlyRate": 2100,
+    "location": "Pune, Maharashtra",
+    "experience": "expert",
+    "yearsOfExperience": 6,
+    "completedProjects": 75,
+    "clientSatisfaction": 98,
+    "ratingsAverage": 4.93,
+    "ratingsCount": 65,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/rohan-kulkarni.webp" },
+    "bio": "Cross-platform mobile engineer delivering fluid iOS and Android experiences with React Native, Redux Toolkit, and native Swift/Kotlin bridge modules.",
+    "skills": ["React Native", "TypeScript", "Redux Toolkit", "iOS", "Android", "GraphQL"],
+    "portfolio": [
+      {
+        "title": "Health & Vital Signs Mobile App",
+        "category": "Mobile Apps",
+        "images": [{ "url": "/projects/fitness-tracker-app.webp" }],
+        "description": "Biometric tracking app with real-time Bluetooth LE medical device pairing and Apple HealthKit integration.",
+        "projectUrl": "https://github.com"
+      }
+    ],
+    "education": [
+      { "degree": "B.E. in Electronics & Telecommunication", "institution": "Pune Institute of Computer Technology", "year": 2018 }
+    ],
+    "certifications": ["Meta React Native Professional Certificate"],
+    "languages": ["English (Fluent)", "Hindi (Fluent)", "Marathi (Fluent)"],
+    "socialLinks": { "github": "https://github.com", "linkedin": "https://linkedin.com" },
+    "createdAt": "2024-02-18T00:00:00.000Z"
+  },
+  {
+    "_id": "f6",
+    "name": "Sneha Patel",
+    "title": "Web3 Smart Contract & Security Auditor",
+    "hourlyRate": 2800,
+    "location": "Ahmedabad, Gujarat",
+    "experience": "expert",
+    "yearsOfExperience": 5,
+    "completedProjects": 46,
+    "clientSatisfaction": 100,
+    "ratingsAverage": 4.97,
+    "ratingsCount": 54,
+    "availability": "available",
+    "avatar": { "url": "/freelancers/sneha-patel.webp" },
+    "bio": "Smart contract auditor identifying reentrancy vulnerabilities, arithmetic overflows, and access control bugs across EVM chains. Proficient in Foundry, Slither, and formal verification.",
+    "skills": ["Solidity", "Smart Contracts", "Foundry", "Web3", "Ethereum", "Slither"],
+    "portfolio": [
+      {
+        "title": "DeFi Automated Market Maker Audit Report",
+        "category": "Cybersecurity",
+        "images": [{ "url": "/projects/penetration-testing-cloud.webp" }],
+        "description": "Discovered and patched 2 critical vulnerabilities in an AMM liquidity pool contract securing $12M TVL.",
+        "projectUrl": "https://github.com"
+      }
+    ],
+    "education": [
+      { "degree": "B.Tech in Information & Communication Technology", "institution": "DA-IICT, Gandhinagar", "year": 2019 }
+    ],
+    "certifications": ["ConsenSys Blockchain Developer Certified"],
+    "languages": ["English (Fluent)", "Hindi (Fluent)", "Gujarati (Native)"],
+    "socialLinks": { "github": "https://github.com", "linkedin": "https://linkedin.com" },
+    "createdAt": "2024-01-25T00:00:00.000Z"
+  }
+]
