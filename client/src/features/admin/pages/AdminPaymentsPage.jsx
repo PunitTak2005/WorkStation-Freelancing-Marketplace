@@ -19,7 +19,7 @@ import api from '@/services/api';
 import Card from '@/components/common/Card';
 import Badge from '@/components/common/Badge';
 import Skeleton from '@/components/common/Skeleton';
-import { formatDate, formatCurrency } from '@/utils/formatters';
+import { formatDate, formatCurrency, formatCompactCurrency } from '@/utils/formatters';
 import { buildAndExportPDF, PDF_COLORS, renderLogoSvg } from '@/utils/pdf/pdfEngine';
 import { downloadInvoicePDF } from '@/utils/pdf';
 import { cn } from '@/utils/cn';
@@ -561,97 +561,119 @@ export default function AdminPaymentsPage() {
       {/* ── 2. 6 Financial KPI Cards ─────────────────────────────────────── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3.5">
         {/* Gross Volume */}
-        <div className="p-4 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Gross Volume</span>
-            <div className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-600">
-              <TrendingUp size={15} />
+        <div className="p-4 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm overflow-hidden h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 truncate">Gross Volume</span>
+              <div className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-600 shrink-0">
+                <TrendingUp size={15} />
+              </div>
+            </div>
+            <div className="min-w-0 mt-2" title={formatCurrency(kpi?.grossRevenue ?? 0)}>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
+                {formatCurrency(kpi?.grossRevenue ?? 0)}
+              </p>
             </div>
           </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white mt-2">
-            {formatCurrency(kpi?.grossRevenue ?? 0)}
-          </p>
-          <p className="text-[10px] text-emerald-600 font-semibold mt-0.5">
+          <p className="text-[10px] text-emerald-600 font-semibold mt-1 truncate">
             {statusDistribution.find(s => s.name === 'Completed')?.value ?? 0} Completed Deals
           </p>
         </div>
 
         {/* Platform Revenue */}
-        <div className="p-4 rounded-2xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">Platform Revenue</span>
-            <div className="p-1.5 rounded-lg bg-indigo-500/15 text-indigo-600">
-              <DollarSign size={15} />
+        <div className="p-4 rounded-2xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm overflow-hidden h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400 truncate">Platform Revenue</span>
+              <div className="p-1.5 rounded-lg bg-indigo-500/15 text-indigo-600 shrink-0">
+                <DollarSign size={15} />
+              </div>
+            </div>
+            <div className="min-w-0 mt-2" title={formatCurrency(kpi?.platformFees ?? 0)}>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
+                {formatCurrency(kpi?.platformFees ?? 0)}
+              </p>
             </div>
           </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white mt-2">
-            {formatCurrency(kpi?.platformFees ?? 0)}
-          </p>
-          <p className="text-[10px] text-indigo-600 font-semibold mt-0.5">Exactly 10% Platform Fee</p>
+          <p className="text-[10px] text-indigo-600 font-semibold mt-1 truncate">Exactly 10% Platform Fee</p>
         </div>
 
         {/* Freelancer Payouts */}
-        <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md hover:-translate-y-1 transition-all shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Freelancer Payouts</span>
-            <div className="p-1.5 rounded-lg bg-teal-500/10 text-teal-600">
-              <CreditCard size={15} />
+        <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md hover:-translate-y-1 transition-all shadow-sm overflow-hidden h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 truncate">Freelancer Payouts</span>
+              <div className="p-1.5 rounded-lg bg-teal-500/10 text-teal-600 shrink-0">
+                <CreditCard size={15} />
+              </div>
+            </div>
+            <div className="min-w-0 mt-2" title={formatCurrency(kpi?.totalPayouts ?? (kpi?.grossRevenue ? kpi.grossRevenue * 0.9 : 0))}>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
+                {formatCurrency(kpi?.totalPayouts ?? (kpi?.grossRevenue ? kpi.grossRevenue * 0.9 : 0))}
+              </p>
             </div>
           </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white mt-2">
-            {formatCurrency(kpi?.totalPayouts ?? (kpi?.grossRevenue ? kpi.grossRevenue * 0.9 : 0))}
-          </p>
-          <p className="text-[10px] text-slate-400 mt-0.5">90% Net Disbursed</p>
+          <p className="text-[10px] text-slate-400 mt-1 truncate">90% Net Disbursed</p>
         </div>
 
         {/* Escrow Balance */}
-        <div className="p-4 rounded-2xl border border-sky-500/30 bg-gradient-to-br from-sky-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">Escrow Balance</span>
-            <div className="p-1.5 rounded-lg bg-sky-500/15 text-sky-600">
-              <ShieldCheck size={15} />
+        <div className="p-4 rounded-2xl border border-sky-500/30 bg-gradient-to-br from-sky-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm overflow-hidden h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400 truncate">Escrow Balance</span>
+              <div className="p-1.5 rounded-lg bg-sky-500/15 text-sky-600 shrink-0">
+                <ShieldCheck size={15} />
+              </div>
+            </div>
+            <div className="min-w-0 mt-2" title={formatCurrency(kpi?.escrowBalance ?? 0)}>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
+                {formatCurrency(kpi?.escrowBalance ?? 0)}
+              </p>
             </div>
           </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white mt-2">
-            {formatCurrency(kpi?.escrowBalance ?? 0)}
-          </p>
-          <p className="text-[10px] text-sky-600 font-semibold mt-0.5">Secured in nodal account</p>
+          <p className="text-[10px] text-sky-600 font-semibold mt-1 truncate">Secured in nodal account</p>
         </div>
 
         {/* Pending Payouts */}
-        <div className="p-4 rounded-2xl border border-amber-500/30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md hover:-translate-y-1 transition-all shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Pending</span>
-            <div className="p-1.5 rounded-lg bg-amber-500/15 text-amber-600">
-              <Clock size={15} />
+        <div className="p-4 rounded-2xl border border-amber-500/30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md hover:-translate-y-1 transition-all shadow-sm overflow-hidden h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 truncate">Pending</span>
+              <div className="p-1.5 rounded-lg bg-amber-500/15 text-amber-600 shrink-0">
+                <Clock size={15} />
+              </div>
+            </div>
+            <div className="min-w-0 mt-2">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight truncate">
+                {kpi?.pendingPayoutsCount ?? 0}
+              </p>
             </div>
           </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white mt-2">
-            {kpi?.pendingPayoutsCount ?? 0}
-          </p>
-          <p className="text-[10px] text-amber-600 font-semibold mt-0.5">
-            {formatCurrency(kpi?.pendingPayoutsAmount ?? 0)} in pipeline
+          <p className="text-[10px] text-amber-600 font-semibold mt-1 truncate" title={formatCurrency(kpi?.pendingPayoutsAmount ?? 0)}>
+            {formatCompactCurrency(kpi?.pendingPayoutsAmount ?? 0)} in pipeline
           </p>
         </div>
 
         {/* Active Disputes */}
-        <div className="p-4 rounded-2xl border border-rose-500/30 bg-gradient-to-br from-rose-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400">Active Disputes</span>
-            <div className="p-1.5 rounded-lg bg-rose-500/15 text-rose-600">
-              <AlertTriangle size={15} />
+        <div className="p-4 rounded-2xl border border-rose-500/30 bg-gradient-to-br from-rose-500/10 via-white to-white dark:via-slate-900 dark:to-slate-900 hover:-translate-y-1 transition-all shadow-sm overflow-hidden h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400 truncate">Active Disputes</span>
+              <div className="p-1.5 rounded-lg bg-rose-500/15 text-rose-600 shrink-0">
+                <AlertTriangle size={15} />
+              </div>
+            </div>
+            <div className="flex items-baseline gap-1.5 mt-2">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-black text-rose-600">
+                {kpi?.disputesCount ?? 0}
+              </span>
+              <span className="text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-600 px-1.5 py-0.5 rounded animate-pulse">
+                Open
+              </span>
             </div>
           </div>
-          <div className="flex items-baseline gap-1.5 mt-2">
-            <span className="text-2xl font-black text-rose-600">
-              {kpi?.disputesCount ?? 0}
-            </span>
-            <span className="text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-600 px-1 rounded animate-pulse">
-              Open
-            </span>
-          </div>
-          <p className="text-[10px] text-rose-500 font-medium mt-0.5">
-            {formatCurrency(kpi?.disputedFunds ?? 0)} locked
+          <p className="text-[10px] text-rose-500 font-medium mt-1 truncate" title={formatCurrency(kpi?.disputedFunds ?? 0)}>
+            {formatCompactCurrency(kpi?.disputedFunds ?? 0)} locked
           </p>
         </div>
       </div>
@@ -801,43 +823,59 @@ export default function AdminPaymentsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-5">
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80">
-            <span className="text-xs text-slate-400 font-medium">Locked in Escrow</span>
-            <h4 className="text-xl font-black text-slate-900 dark:text-white mt-1">
-              {formatCurrency(escrowMetrics?.lockedInEscrow ?? 0)}
-            </h4>
-            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-2 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pt-5">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden h-full flex flex-col justify-between">
+            <div>
+              <span className="text-xs text-slate-400 font-medium truncate block">Locked in Escrow</span>
+              <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.lockedInEscrow ?? 0)}>
+                <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate">
+                  {formatCurrency(escrowMetrics?.lockedInEscrow ?? 0)}
+                </h4>
+              </div>
+            </div>
+            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
               <div className="bg-sky-500 h-full w-[70%]" />
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80">
-            <span className="text-xs text-slate-400 font-medium">Pending Release</span>
-            <h4 className="text-xl font-black text-blue-600 dark:text-blue-400 mt-1">
-              {formatCurrency(escrowMetrics?.pendingRelease ?? 0)}
-            </h4>
-            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-2 overflow-hidden">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden h-full flex flex-col justify-between">
+            <div>
+              <span className="text-xs text-slate-400 font-medium truncate block">Pending Release</span>
+              <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.pendingRelease ?? 0)}>
+                <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-blue-600 dark:text-blue-400 tracking-tight break-words truncate">
+                  {formatCurrency(escrowMetrics?.pendingRelease ?? 0)}
+                </h4>
+              </div>
+            </div>
+            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
               <div className="bg-blue-500 h-full w-[45%]" />
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80">
-            <span className="text-xs text-slate-400 font-medium">Released Recently</span>
-            <h4 className="text-xl font-black text-emerald-600 dark:text-emerald-400 mt-1">
-              {formatCurrency(escrowMetrics?.releasedToday ?? 42500)}
-            </h4>
-            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-2 overflow-hidden">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden h-full flex flex-col justify-between">
+            <div>
+              <span className="text-xs text-slate-400 font-medium truncate block">Released Recently</span>
+              <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.releasedToday ?? 42500)}>
+                <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-emerald-600 dark:text-emerald-400 tracking-tight break-words truncate">
+                  {formatCurrency(escrowMetrics?.releasedToday ?? 42500)}
+                </h4>
+              </div>
+            </div>
+            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
               <div className="bg-emerald-500 h-full w-[35%]" />
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80">
-            <span className="text-xs text-slate-400 font-medium">Disputed Funds</span>
-            <h4 className="text-xl font-black text-rose-600 dark:text-rose-400 mt-1">
-              {formatCurrency(escrowMetrics?.disputedFunds ?? 0)}
-            </h4>
-            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-2 overflow-hidden">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden h-full flex flex-col justify-between">
+            <div>
+              <span className="text-xs text-slate-400 font-medium truncate block">Disputed Funds</span>
+              <div className="min-w-0 mt-1" title={formatCurrency(escrowMetrics?.disputedFunds ?? 0)}>
+                <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-rose-600 dark:text-rose-400 tracking-tight break-words truncate">
+                  {formatCurrency(escrowMetrics?.disputedFunds ?? 0)}
+                </h4>
+              </div>
+            </div>
+            <div className="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
               <div className="bg-rose-500 h-full w-[15%]" />
             </div>
           </div>
@@ -1414,11 +1452,11 @@ export default function AdminPaymentsPage() {
               </div>
 
               {/* Financial Breakdown Card */}
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-indigo-50/40 dark:from-slate-800/60 dark:to-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 space-y-3">
+              <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-indigo-50/40 dark:from-slate-800/60 dark:to-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 space-y-3 overflow-hidden">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Financial Breakdown</span>
-                <div className="flex items-baseline justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <span className="text-xs text-slate-600 dark:text-slate-300">Total Escrow Deposited</span>
-                  <span className="text-2xl font-black text-slate-900 dark:text-white">
+                  <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight break-words truncate" title={formatCurrency(activeDrawerPayment.amount)}>
                     {formatCurrency(activeDrawerPayment.amount)}
                   </span>
                 </div>
